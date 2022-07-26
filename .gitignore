@@ -1,0 +1,6 @@
+.DS_Store
+
+#File containing API key data.
+credentials.py
+
+__pycache__
