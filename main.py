@@ -1,9 +1,9 @@
 import tweepy
-from credentials import *
+import os
 
 # Authenticate to Twitter
-auth = tweepy.OAuthHandler(API_key, API_secret_key)
-auth.set_access_token(access_token,access_token_secret)
+auth = tweepy.OAuthHandler(os.environ["API_key"], os.environ["API_secret_key"])
+auth.set_access_token(os.environ["access_token"], os.environ["access_token_secret"])
 
 api = tweepy.API(auth)
 
