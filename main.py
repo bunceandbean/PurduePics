@@ -1,4 +1,6 @@
 import tweepy
+from time import sleep
+from datetime import datetime as dt
 import os
 
 # Authenticate to Twitter
@@ -7,9 +9,14 @@ auth.set_access_token(os.environ["access_token"], os.environ["access_token_secre
 
 api = tweepy.API(auth)
 
-try:
-    api.verify_credentials()
-    print("Authentication OK")
-    api.update_status_with_media(status="Test",filename="test.jpg")
-except:
-    print("Error during authentication")
+while True:
+    if dt.hour == 6:
+        try:
+            api.verify_credentials()
+            print("Authentication OK")
+            api.update_status_with_media(status="Test",filename="test.jpg")
+        except:
+            print("Error during authentication")
+        sleep(60)
+    else:
+        sleep(5)
