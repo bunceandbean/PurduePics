@@ -1,5 +1,6 @@
 import tweepy
 from datetime import datetime as dt
+from sys import exit
 import requests
 from credentials import *
 
@@ -22,9 +23,12 @@ def get_noon_photo_name() -> tuple:
 time_tuple = get_noon_photo_name()
 
 #Get Current Photo
-img_data = requests.get(time_tuple[0]).content
-with open(filepath+'current_photo.jpg', 'wb') as handler:
-    handler.write(img_data)
+try:
+    img_data = requests.get(time_tuple[0]).content
+    with open(filepath+'current_photo.jpg', 'wb') as handler:
+        handler.write(img_data)
+except:
+    exit("Photo doesn't exist: most likely propogation delay.")
 
 # Make Tweet
 try:
