@@ -29,7 +29,7 @@ with open('current_photo.jpg', 'wb') as handler:
 # Make Tweet
 try:
     api.verify_credentials()
-    api.update_status_with_media(status="Purdue Engineering Mall - " + time_tuple[1] + " @ 12:00pm", filename="current_photo.jpg")
+    api.update_status_with_media(status="Purdue Engineering Mall - " + time_tuple[1] + " @ 12:00pm", filename=filepath+"current_photo.jpg")
     print("Authentication OK")
 except:
     print("Error during authentication, logged and stopped scheduling.")
