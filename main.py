@@ -23,7 +23,7 @@ time_tuple = get_noon_photo_name()
 
 #Get Current Photo
 img_data = requests.get(time_tuple[0]).content
-with open('current_photo.jpg', 'wb') as handler:
+with open(filepath+'current_photo.jpg', 'wb') as handler:
     handler.write(img_data)
 
 # Make Tweet
