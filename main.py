@@ -10,7 +10,7 @@ auth.set_access_token(os.environ["access_token"], os.environ["access_token_secre
 api = tweepy.API(auth)
 
 while True:
-    if dt.hour == 20:
+    if dt.now().hour == 20:
         try:
             api.verify_credentials()
             print("Authentication OK")
