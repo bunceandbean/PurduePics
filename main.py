@@ -10,7 +10,7 @@ api = tweepy.API(auth)
 # Make Tweet
 try:
     api.verify_credentials()
+    api.update_status_with_media(status="Test",filename="/home/bunceandbean/PurduePics/PurduePics/test.jpg")
     print("Authentication OK")
-    api.update_status_with_media(status="Test",filename="test.jpg")
 except:
     print("Error during authentication")
