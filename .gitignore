@@ -3,4 +3,7 @@
 #File containing API key data.
 credentials.py
 
+#File with explicit keys
+local_main.py
+
 __pycache__
